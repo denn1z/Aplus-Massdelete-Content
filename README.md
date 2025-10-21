@@ -1,11 +1,31 @@
-# Aplus-Massdelete-Content
-JavaScript to delete the current contentlist from A Plus
+# 🧹 Aplus Mass Delete Content
 
-Open amazon A+ ContentList and filter which items you want to delete. The script iterates through all links and splits the a+ content reference keys into an array.
-Then it will send an post request to Achieve the Content. Keep in mind to replace the apiUrl with your current one. Use this script on your own risk! Also try to understand it before using.
+A lightweight JavaScript utility to **mass delete A+ Content** from your Amazon Seller Central Content List.
 
-Copy Paste into Dev Console:
+---
 
+## ⚙️ Overview
+
+This script scans your **A+ Content List** on Amazon Seller Central, collects all A+ content reference keys, and sends a POST request to archive each item.
+
+> ⚠️ **Use this script at your own risk!**  
+> It will send deletion requests for all content currently filtered in your list.  
+> Make sure you understand what it does before running it.
+
+---
+
+## 🪄 How It Works
+
+1. Open your **A+ Content Manager** in Seller Central.  
+2. Filter or select the items you want to delete.  
+3. Open your **browser DevTools Console** (`F12` → “Console” tab).  
+4. Copy and paste the script below and press **Enter**.
+
+---
+
+## 🧠 Script
+
+```javascript
 javascript:(function(){ (async () => {
   const apiUrl = "https://sellercentral.amazon.de/aplus/api/ArchiveContent"; // << replace with your authorized endpoint
 
@@ -72,8 +92,7 @@ javascript:(function(){ (async () => {
     return;
   }
 
-  // OPTIONAL: Ask user for confirmation in the console before proceeding
-  // (Uncomment if you want a safety confirmation)
+  // OPTIONAL: Ask user for confirmation before proceeding
   // const proceed = confirm(`Send ${contentIds.length} POST requests to ${apiUrl}?`);
   // if (!proceed) { console.log('Aborted by user.'); return; }
 
